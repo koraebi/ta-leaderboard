@@ -8,39 +8,34 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
-### `npm run build`
+## Technical Assessment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You are going to implement the screen following up the design question you had during last interview. There are two parts to this exercise:
+A simple WebSocket server runs locally, since we won’t focus on backend, this can be done as simple as possible, you can use https://github.com/websockets/ws or any library you prefer. The players notification message will contains the players info.
+A single page application built with React, the app needs to cover the questions mentioned in the design question, the delivery can be a zip file containing source code(as well as all of the project files, including dot files) or a git repository that we can access.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Recap of design question:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Please design a real-time leaderboard page that can show the latest status of a game’s top 10 players in first page, players’ status change will be broadcast to UI as WebSocket messages. 
 
-### `npm run eject`
+Your React App should include:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. React Components.
+2. Redux (or context, but better with redux we want check how you managed the redux).
+3. Unit test.
+4. At least one custom hooks.
+5. Add pagination (assume we have more than 100 players and could dynamically config the page size (like 10, 15, 20, 25…players per page)). The notification should works fine if user are not in first page.
+6. Add Player avatar Images, so the Player info should contains player name, ranking, scores, avatar.
+7. Done by Typescript.
+8. Feel free to use MUI, Ant Design or other UI libraries you prefer. Or you could develop from scratch.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Overview
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

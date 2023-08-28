@@ -35,7 +35,13 @@ const getPlayers = async () => {
   return players;
 }
 
-// Updating players in database
+// Getting player from database
+const getPlayer = async (username) => {
+  const players = await getPlayers();
+  return players.find(player => player.username === username);
+}
+
+// Updating player in database
 const updatePlayer = async (newPlayer) => {
   try {
     let players = await getPlayers();
@@ -48,13 +54,7 @@ const updatePlayer = async (newPlayer) => {
   }
 }
 
-// Updating players in database
-const getPlayer = async (username) => {
-  const players = await getPlayers();
-  return players.find(player => player.username === username);
-}
-
-// Http call to get the players list
+// Http call to get the list of players
 app.get('/players', async (req, res) => {
   const page = parseInt(req.query.page || 1);
   const limit = parseInt(req.query.limit || 10);
