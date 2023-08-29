@@ -95,7 +95,7 @@ Your React App should include:
 #### 4. Custom Hooks.
 
 - usePagination():\
-Hook containing returning all the states and callbacks linked to the Redux Store and to be used inside any component.
+Hook returning all the states and callbacks linked to the Redux Store and to be used inside any component.
 
 - useSocket():\
 Hook to subscribe an event name to the global Websocket stored in the Redux Store, it allows different components to subscribe to different broadcasted events.
