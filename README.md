@@ -18,6 +18,7 @@ Open [http://localhost:3000/players](http://localhost:3000) to check the data in
 
 Same for the React project.
 Open [http://localhost:5000](http://localhost:5000) to view the UI in your browser.
+A Backend Cron runs every 15s and emits a Websocket message to update the player 'glitteringsent'.
 
 #### `npm test` (Client directory)
 
