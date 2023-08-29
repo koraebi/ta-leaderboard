@@ -14,7 +14,7 @@ export default function App() {
     return () => {
 			dispatch(disconnect()); // We diconnect the web socket when main application closed
 		};
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">

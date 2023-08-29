@@ -5,11 +5,11 @@ test('should return the initial state', () => {
   expect(reducer(undefined, { type: undefined })).toEqual(initialPlayersState);
 })
 
-test('should not update the current page if the new page is higher than the total pages', () => {
+test('should update the total number of players', () => {
   expect(reducer(initialPlayersState, setTotalPlayers(10)).totalPlayers).toEqual(10);
 })
 
-test('should update the total pages', () => {
+test('should update the players to display', () => {
   expect(reducer(initialPlayersState, setDisplayedPlayers([
     { 
       username: 'test',
@@ -20,7 +20,7 @@ test('should update the total pages', () => {
   ])).displayedPlayers).toHaveLength(1);
 })
 
-test('should update the items per page', () => {
+test('should update the player inside the displayed players', () => {
   const player: Player = { 
     username: 'test',
     picture: 'test',
