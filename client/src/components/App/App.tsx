@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import LeaderBoard from '../LeaderBoard/LeaderBoard';
+import Leaderboard from '../Leaderboard/Leaderboard';
 import Pagination from '../Pagination/Pagination';
 import { connect, disconnect } from '../../reducers/socketSlice';
 
@@ -19,7 +19,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>LEADERBOARD</h1>
-      <LeaderBoard/>
+      <Leaderboard/>
       <Pagination/>
     </div>
   );

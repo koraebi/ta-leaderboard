@@ -64,7 +64,7 @@ const StyledTableRow = styled(MUITableRow)(({ theme }) => ({
   },
 }));
 
-export default function LeaderBoard() {
+export default function Leaderboard() {
   const dispatch = useDispatch();
   const appDispatch = useAppDispatch();
   const displayedPlayers = useSelector((state: RootState) => state.players.displayedPlayers); // Selecting the players to display from the Redux store
@@ -84,7 +84,7 @@ export default function LeaderBoard() {
   }
   
   return (
-    <div className="LeaderBoard">
+    <div className="Leaderboard">
       <MUITableContainer component={MUIPaper}>
         <MUITable sx={{ minWidth: 700 }} aria-label="customized table">
           <MUITableHead>

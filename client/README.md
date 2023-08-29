@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Real-time Leaderboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -36,6 +36,55 @@ Your React App should include:
 7. Done by Typescript.
 8. Feel free to use MUI, Ant Design or other UI libraries you prefer. Or you could develop from scratch.
 
-## Overview
+## Report
 
+#### 1. React Components.
 
+- App.tsx:\
+  Main parent component, when mounted, the Websocket is initialized and stored in the Redux Store.
+
+- Leaderboard.tsx:\
+  Stateful component representing a DataTable containing the Players' Rank, Avatar, Username and Score. The UI has been implemented using MUI components.\
+  When the component mounts or updates depending on the 'currentPage' and 'itemsPerPage' states from the Redux Store, it fetches the list of Players to be displayed via HTTP request to the Backend.\
+  The displayable player are stored in the Redux Store and the HTTP request is Thunked via the Redux Toolkit.
+  This component also subscribes to the Websocket message 'playerUpdate' with Socket.IO via a Custom Hook and updates the Leaderboard in Real-time.
+
+- Pagination.tsx:\
+  Stateful component representing a Pagination dynamically customizable by setting the items per page. The UI has been implemented using MUI components.\
+  This component dispatches the values of the new page and the items per page to the Redux Store.
+
+#### 2. Redux.
+
+- store.ts:\
+  The reducers have been created using the Redux Toolkit function 'createSlice' to automatically generate action creators and action types that correspond to the reducers and state.
+  The AppDispatcher is exported as 'useAppDispatch' to avoid confusion with Redux 'useDispatch' function.
+
+- paginationSlice.ts:\
+  This Slice contains 3 actions: 'setCurrentPage' the related state is shared between the Leaderboard component and the Pagination component.
+
+- playersSlice.ts:\
+  The RTK function 'createSlice' to automatically generate action creators and action types that correspond to the reducers and state.
+
+- socketSlice.ts:\
+  The RTK function 'createSlice' to automatically generate action creators and action types that correspond to the reducers and state.
+
+#### 3. Unit Tests.
+
+- usePagination():\
+  S
+
+#### 4. Custom Hooks.
+
+- usePagination():\
+  
+
+- useSocket():\
+  S
+
+#### 5. Pagination.
+
+#### 6. Data.
+
+#### 7. Code.
+
+#### 8. User Interface.

@@ -30,7 +30,7 @@ export default function Pagination() {
   };
 
   return (
-    <div className='Pagination'>
+    <div className="Pagination">
       <MUIGrid
         container
         direction="row"

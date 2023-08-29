@@ -20,14 +20,14 @@ export interface PlayersState {
   displayedPlayers: Player[],
 }
 
-const initialState: PlayersState = {
+export const initialPlayersState: PlayersState = {
   totalPlayers: 0,
   displayedPlayers: [],
 }
 
 export const playersSlice = createSlice({
   name: 'players',
-  initialState,
+  initialState: initialPlayersState,
   reducers: {
     setTotalPlayers: (state, action: PayloadAction<number>) => {
       state.totalPlayers = action.payload;

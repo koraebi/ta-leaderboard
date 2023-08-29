@@ -66,7 +66,6 @@ app.get('/players', async (req, res) => {
 
   const response = {
     total: totalPlayers.length,
-    limit,
     players: totalPlayers.slice(startIndex, endIndex),
   };
 
@@ -75,9 +74,9 @@ app.get('/players', async (req, res) => {
 
 // Sending socket event every 15s to update a player's score and check real time
 cron.schedule("*/10 * * * * *", async () => {
-  let player = await getPlayer('partoffensive');
+  let player = await getPlayer('glitteringsent');
   await updatePlayer({ ...player, score: player.score + 30 });
-  player = await getPlayer('partoffensive');
+  player = await getPlayer('glitteringsent');
   io.emit('playerUpdate', player);
   console.log(`Socket to update player '${player.username}' emitted to the client`);
 });

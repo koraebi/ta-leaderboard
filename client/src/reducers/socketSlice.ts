@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { io } from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
 
 export interface SocketState {
-  socket: any,
+  socket: Socket | any,
   isConnected: boolean,
 }
 
-const initialState: SocketState = {
+export const initialSocketState: SocketState = {
   socket: null,
   isConnected: false,
 }
@@ -14,7 +14,7 @@ const initialState: SocketState = {
 // Creating actions and recuders using the Redux Toolkit approach for the socket store
 export const socketSlice = createSlice({
   name: 'socket',
-  initialState,
+  initialState: initialSocketState,
   reducers: {
     connect: (state) => {
       if (!state.isConnected) {

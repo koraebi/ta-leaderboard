@@ -10,7 +10,7 @@ export interface PaginationState {
   itemsPerPage: number,
 }
 
-const initialState: PaginationState = {
+export const initialPaginationState: PaginationState = {
   currentPage: 1,
   nextPage: 0,
   previousPage: 0,
@@ -36,7 +36,7 @@ const updateNextPreviousPage = (state: PaginationState) => {
 // Creating actions and recuders using the Redux Toolkit approach for the pagination store
 export const paginationSlice = createSlice({
   name: 'pagination',
-  initialState,
+  initialState: initialPaginationState,
   reducers: {
     setCurrentPage: (state, action: PayloadAction<number>) => {
       const newPage = action.payload;
