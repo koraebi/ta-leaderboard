@@ -9,7 +9,7 @@ In the root directory, you can run:
 #### `npm install`
 #### `npm start`
 
-installs dependencies a runs the app in the development mode.
+Installs dependencies and runs the app in the development mode.
 Open [http://localhost:3000/players](http://localhost:3000) to check the data in your browser.
 
 #### `cd client` 
